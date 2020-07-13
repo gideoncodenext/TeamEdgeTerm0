@@ -8,6 +8,7 @@
 
 	Any time you start thinking 'this is tedious', you can probably write a function for that task.
 
+
   -------------------------------------------- */
 
 const READLINE = require("readline-sync");
@@ -21,23 +22,65 @@ const READLINE = require("readline-sync");
 // **** Challenge 1: Problem 1 ****
 // Write a function called printMessage() that prints any message you want.
 
+function printMessage() {
+	console.log("Hello world");
+}
+
+printMessage()
 
 // **** Challenge 1: Problem 2 ****
 // Write a function called printFiveMessages() that calls printMessage() five times.
+
+function printFiveMessages() {
+	printMessage() 
+	printMessage()
+	printMessage()
+	printMessage()
+	printMessage()
+	
+
+
+
+
+}
+
+printFiveMessages()
 
 
 // **** Challenge 1: Problem 3 ****
 // Write a function called getUserInput() that asks the user if they'd like to print your message
 // once or five times. Then call one of the two functions above based on what the user decides.
 
+let userInput = READLINE.question("How many times would you like to print the message? Either 1 or 5");
+
+if (userInput == 1 ){
+	printMessage()
+} else if (userInput == 5){
+	printFiveMessages()
+
+} else {
+	console.log("Error, please type 1 or 5");
+}
+
+
 
 // **** Challenge 1: Problem 4 ****
 // Write a function called printGreeting() that prints a greeting message to the user.
 
+function printGreeting() {
+	console.log("Greetings user")
+}
+
+printGreeting()
 
 // **** Challenge 1: Problem 5 ****
 // Write a function called printClosing() that prints a goodbye message to the user.
 
+function printClosing() {
+	console.log("Goodbye user")
+}
+
+printClosing()
 
 // **** Challenge 1: Problem 6 ****
 // Write a function called run() that greets the user, asks them for input, and sends a goodbye message.
@@ -45,6 +88,14 @@ const READLINE = require("readline-sync");
 
 
 
+function run() {
+	printGreeting();
+	READLINE.question("How are you doing today?");
+	printClosing();
+
+}
+
+run();
 /* -------------------------------------------- 
 
 Challenge 2: Functions are also able to take input and return output. 
@@ -67,8 +118,22 @@ However, if the two values are the same, the funciton will return double their s
 -------------------------------------------- */
 
 
+function sumDouble(x, y) {
+	let add = x+y;
+	console.log(`${x} + ${y} is ${add}`);
+	
+	
+	if (x == y) {
+		add;
+		add2= (add *2);
+		console.log(add2)
 
 
+	}
+	return add;
+}
+
+sumDouble(3, 3)
 
 
 
@@ -87,7 +152,22 @@ Write a function called makes10 that takes two numbers, a and b, and returns tru
 
 -------------------------------------------- */
 
+function makes10(x,y){
+	if (x == 10 || y==10) {
+		console.log("true")
+		return true;
+	} else if (x+y == 10){
+		console.log("true");
+		return true;
 
+	} else {
+		console.log("false");
+		return false;
+	}
+}
+
+
+makes10(5,5);
 
 
 
@@ -136,6 +216,24 @@ If speed is between 61and 80 inclusive, the result is 1.
 If speed is 81 or more, the result is 2.
 
 -------------------------------------------- */
+
+function checkTicket () {
+	let userSpeed = READLINE.question("How fast were you driving?");
+	if (userSpeed <= 60) {
+		console.log("No ticket");
+	} else if (userSpeed > 60 && userSpeed <= 80){
+		console.log("Small ticket");
+	}else {
+		console.log("Big ticket")
+
+
+	}
+
+
+	}
+
+
+checkTicket()
 
 
 

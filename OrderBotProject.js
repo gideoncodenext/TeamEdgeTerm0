@@ -40,8 +40,35 @@ Remember! Functions are meant to be reusable, so write a function that will work
 
 -------------------------------------------- */
 
+let user1 = READLINE.question("What is your name?");
+let user2 = READLINE.question("What is your friend's name?");
+let user3 = READLINE.question("What is your other friend's name?");
 
 
+
+function groupOrder(name){
+	let cost;
+	let foodOptions = READLINE.question("Would you like to order a cheesburger for 10$, fries for $5 or a drink for $3?")
+	if (foodOptions == "cheesburger"){
+		console.log(`${name} will spend 10$`);
+		cost = 10;
+
+
+	} else if (foodOptions == "fries") {
+		console.log(`${name} will spend 5$`);
+		cost = 5;
+
+	} else if (foodOptions == "drink") {
+		console.log(`${name} will spend 3$`);
+		cost=3;
+
+	}
+	return cost;
+}
+
+let user1Meal = groupOrder(user1);
+let user2Meal = groupOrder(user2);
+let user3Meal = groupOrder(user3);
 
 
 
@@ -65,9 +92,30 @@ Remember! Functions are meant to be reusable, so write a function that will work
 
 -------------------------------------------- */
 
+function orderCalculate(name,meal){
+	let tip = READLINE.question(`How much tip would you like to give? 10%, 15%, 20%`);
+	let tax = meal * 0.06;
+	let userTip;
+	
+	if (tip == "10%"){
+		userTip = 0.1 * meal;
+
+	} else if (tip == "15%") {
+		userTip = 0.15 * meal;
+
+	} else if (tip == "20%") {
+		userTip = 0.2 * meal;
+	}
 
 
+let fullPrice = tax + meal + userTip
+return fullPrice; 
 
+}
+
+let user1Total = orderCalculate(user1, user1Meal);
+let user2Total = orderCalculate(user1, user1Meal);
+let user3Total = orderCalculate(user1, user1Meal);
 
 
 
@@ -91,8 +139,28 @@ Remember! Functions are meant to be reusable, so write a function that will work
 
 -------------------------------------------- */
 
+function printReciept () {
+	console.log(user1 + ":");
+	console.log("Meal:" + user1Meal);
+	console.log("+ tax & tip");
+	console.log("Total:" + user1Total);
+
+	console.log(user2 + ":");
+	console.log("Meal:" + user2Meal);
+	console.log("+ tax & tip");
+	console.log("Total:" + user2Total);
+
+	console.log(user3 + ":");
+	console.log("Meal:" + user3Meal);
+	console.log("+ tax & tip");
+	console.log("Total:" + user3Total);
 
 
+
+}
+
+
+printReciept();
 
 
 

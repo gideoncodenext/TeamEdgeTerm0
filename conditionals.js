@@ -17,6 +17,13 @@ console.log("------------------- Challenge 1 -------------------")
     Write conditional statements that print out whether you can drive in your city. */
 
 
+let age = READLINE.question("How old are you?")
+
+if (age >= 16 ) {
+  console.log('You are old enough to drive!')
+} else {
+  console.log("You are not old enough to drive yet.")
+}
 
 
 
@@ -37,9 +44,20 @@ console.log("------------------- Challenge 2 -------------------")
     Hint: Create three variables and assign them random scores. */
 
 
+let score1 = Math.floor(Math.random() * 101);
+console.log(score1);
+let score2 = Math.floor(Math.random() * 101);
+console.log(score2);
+let score3 = Math.floor(Math.random() * 101);
+console.log(score3);
 
-
-
+if ((score1 > score2) && (score1 > score3)) {
+  console.log("Player 1 is the winner");
+} else if ((score2 > score3)) {
+  console.log("Player 2 is the winner");
+} else {
+  console.log("Player 3 is the winner");
+}
 
 
 
@@ -63,12 +81,35 @@ console.log("------------------- Challenge 3 -------------------")
    Snowing: Wear gloves and a scarf */
 
 //Here's a variable to get you started:
-let weather = `rainy`;
+
+let weatherArray = ["rainy", "sunny", "snowing"];
+
+
+let randomWeather = weatherArray[Math.floor(Math.random() * weatherArray.length)];
+console.log(randomWeather)
+
+let temperature = Math.floor(Math.random() * 76) + 35
 
 
 
+if (randomWeather == "rainy"){
+  console.log("Bring an umbrella");
+  if (temperature >= 90) {
+    console.log("Its " + temperature + " degrees outside, you'd probably rather just get a bit wet");
+  }
 
+} else if (randomWeather == "sunny") {
+  console.log("Wear a hat and sunglasses")
+  if (temperature <= 70) {
+    console.log("Even though it's sunny outside, it's " + temperature + " degrees outside, maybe wear a jacket.");
+  }
 
+} else if (randomWeather == "snowing") {
+  console.log("Wear gloves and a scarf")
+  if (temperature >= 60)
+    console.log("Even though it's snowing, it is " + temperature + " degrees outside, I'd recommend being ready for the snow to melt");
+
+}
 
 
 
@@ -92,15 +133,6 @@ let weather = `rainy`;
 */
 
 
-
-
-
-
-
-
-
-
-
 /* -------------------------------------------- */
 
 console.log("------------------- Challenge 4 -------------------")
@@ -109,16 +141,37 @@ console.log("------------------- Challenge 4 -------------------")
     Write a set of conditionals that will take a number from 1 to 7 
     and print out the corresponding day of the week. 
     Make sure to add a statement that accounts of any numbers out of range! */
+// console.log an error if numbers are not between 1-7
 
 
 
+let dayOfWeek = READLINE.question("What day of the week is it, answer with a number. For example, Monday is 1, Tuesday is 2, etc.")
+
+if (dayOfWeek == 1){
+  console.log("The day is Monday.");
+} else if (dayOfWeek == 2) {
+  console.log("The day is Tuesday.");
+
+} else if (dayOfWeek == 3) {
+  console.log("The day is Wednesday.");
+
+} else if (dayOfWeek == 4) {
+  console.log("The day is Thursday.");
 
 
+} else if (dayOfWeek == 5) {
+  console.log("The day is Friday.");
 
+} else if (dayOfWeek == 6) {
+  console.log("The day is Saturday.");
 
+} else if (dayOfWeek == 7) {
+  console.log("The day is Sunday");
 
+}else {
+  console.log("Error. Please input a number between 1 and 7");
 
-
+}
 
 /* -------------------------------------------- */
 
@@ -139,8 +192,25 @@ console.log("------------------- Challenge 1 -------------------")
   year stored in a variable is/was a leap year.*/
 
 
+// module gives remainder when you divide by %. If you can divide by 2 go to step 2, etc.
 
+let currentYear = READLINE.question("What is the current year?")
 
+if (currentYear%4 == 0) {
+  console.log("Number is divisible by 4. Now lets check if its divisible by 100!")
 
+  if (currentYear%100) {
+    console.log("Number is divisble by 100. Now lets check if its divisble by 400!")
+
+  }
+
+      if (currentYear%400){
+        console.log("The year is a leap year!")
+      }
+
+}else{ 
+  console.log("The year is not a leap year")
+
+}
 
 

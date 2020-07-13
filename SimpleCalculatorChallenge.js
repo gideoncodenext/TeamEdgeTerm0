@@ -11,6 +11,7 @@
 
   -------------------------------------------- */
 
+  const READLINE = require("readline-sync");
   console.log(`My Simple Calculator`);
 
 /* -------------------------------------------- 
@@ -29,14 +30,26 @@ Part 1:
 
 // Write a function called addNumbers that will take two numbers and return the sum.
 
+function addNumbers(x, y){
+	add = x + y;
+	console.log(`${x} + ${y} is ${add}`);
+	return add;
+}
 
-
+addNumbers(2,3);
 
 
 
 
 // Write a function called subNumbers that will take two numbers and return the difference.
 
+function subNumbers(x,y){
+	sub = x - y;
+	console.log(`${x} - ${y} is ${sub}`);
+	return sub;
+}
+
+subNumbers(6, 2);
 
 
 
@@ -44,13 +57,13 @@ Part 1:
 /*------------*/
 // Testing Code - Uncomment the code below to test your code!
 
-// checkAnswers(addNumbers(5, 15), 20); 
-// checkAnswers(addNumbers(3, 18), 21);
-// checkAnswers(addNumbers(12, 28), 40); 
+ checkAnswers(addNumbers(5, 15), 20); 
+ checkAnswers(addNumbers(3, 18), 21);
+ checkAnswers(addNumbers(12, 28), 40); 
 
-// checkAnswers(subNumbers(18, 7), 11);
-// checkAnswers(subNumbers(11, 9), 2);
-// checkAnswers(subNumbers(18, 21), -3);
+ checkAnswers(subNumbers(18, 7), 11);
+ checkAnswers(subNumbers(11, 9), 2);
+ checkAnswers(subNumbers(18, 21), -3);
 
 /* -------------------------------------------- 
 
@@ -68,28 +81,37 @@ Part 2:
 
 // Write a function called multiplyNumbers that will take two numbers and return the product.
 
+function multiplyNumbers(x,y){
+	mult = x * y;
+	console.log(`${x} * ${y} is ${mult}`);
+	return mult;
+}
 
-
-
+multiplyNumbers(4, 2);
 
 
 // Write a function called divideNumbers that will take two numbers and return the quotent.
 
+function divideNumbers(x,y){
+	div = x / y;
+	console.log(`${x} / ${y} is ${div}`);
+	return div;
+}
 
-
+divideNumbers(6, 2)
 
 
 
 /*------------*/
 // Testing Code - Uncomment the code below to test your code!
 
-// checkAnswers(multiplyNumbers(10, 3), 30); 
-// checkAnswers(multiplyNumbers(21, 7), 147);
-// checkAnswers(multiplyNumbers(4, 16), 64); 
+checkAnswers(multiplyNumbers(10, 3), 30); 
+checkAnswers(multiplyNumbers(21, 7), 147);
+checkAnswers(multiplyNumbers(4, 16), 64); 
 
-// checkAnswers(divideNumbers(24, 100), `.24`);
-// checkAnswers(divideNumbers(21, 7), `3`);
-// checkAnswers(divideNumbers(15, 4), `3.75`);
+checkAnswers(divideNumbers(24, 100), `.24`);
+checkAnswers(divideNumbers(21, 7), `3`);
+checkAnswers(divideNumbers(15, 4), `3.75`);
 
 /* -------------------------------------------- 
 
@@ -102,8 +124,34 @@ Write a function that will prompt the user for the operation they want to call a
 
   -------------------------------------------- */
 
+function myCalculator() { 
+	let userInput = READLINE.question("What operation do you want to do, addition, subtraction, multiplication or division?")
+
+	if (userInput == "addition" ){
+		let addInputX = READLINE.question("What is the first number you want?");
+		let addInputY = READLINE.question("What is the second number you want?");
+		return addNumbers(parseInt(addInputX), parseInt(addInputY));
+		
 
 
+	} else if (userInput == "subtraction"){
+		let subInputX = READLINE.question("What is the first number you want?");
+		let subInputY = READLINE.question("What is the second number you want?");
+		return subNumbers(parseInt (subInputX), parseInt (subInputY));
+
+	} else if (userInput == "multiplication"){
+		let multInputX = READLINE.question("What is the first number you want?");
+		let multInputY = READLINE.question("What is the second number you want?");
+		return multiplyNumbers(parseInt (multInputX), parseInt (multInputY));
+	} else if (userInput == "division") {
+		let divInputX = READLINE.question("What is the first number you want?");
+		let divInputY = READLINE.question("What is the second number you want?");
+		return divideNumbers(parseInt (divInputX), parseInt (divInputY));
+	}
+}
+
+outputValue = myCalculator()
+console.log(outputValue)
 
 
 
@@ -143,11 +191,18 @@ Don't forget to:
 
 
 
+function calculateSleep() {
+	let userSleepX = READLINE.question("What time did you go to bed?");
+	let userSleepY = READLINE.question("What time did you wake up?");
+	return subNumbers(parseFloat (userSleepX), parseFloat (userSleepY));
 
 
+}
 
 
-
+outputSleepValue = calculateSleep()
+console.log(outputSleepValue);
+	
 
 
 
