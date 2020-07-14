@@ -35,32 +35,76 @@ console.log(welcomeMessage)
 
 //-->Todo: declare a shoppingList array
 
+let shoppingList = ["Ice cream", "Milk", "Cereal", "Chips", "Fruit"]
 
 while(active){
-
-    checkAnswer(promptUser()) //this makes the program continously prompt and check response while the boolean 'active' returns true
+	// let reply = promptUser();
+	// console.log(reply);
+	checkAnswer(promptUser()) 
+	//this makes the program continously prompt and check response while the boolean 'active' returns true
 
 }
 
 function promptUser(){
 
-    let  reply = READLINE.question("What do you want to add or remove?  >>  ")
+    reply = READLINE.question("What do you want to add or remove?")
 
     return reply
 
 }
 
-function checkAnswer(){
+function checkAnswer(reply){
+	console.log(reply);
+	let userReply = reply.split(" ")
+	
+	
+
+	if ((userReply[0]) === "add") {
+		addItem(userReply);
+
+	} else if (userReply[0] == "remove") {
+		removeItem();
+
+	}
 
 
 }
 
-function addItem(){
+function addItem(userReply) {
+	shoppingList.push(userReply[1]);
+	console.log(shoppingList);
+
+	
 //this function can take in a string and store it in an array
 
 }
 
-function removeItem(){
+function removeItem(userReply){
+	 shoppingList.pop(reply); // pop: method removes and returns the
+                             //      last element in the array. 
+    console.log(reply);
+    console.log("removeItem");
+    console.log(shoppingList);
 
 
+	// console.log("This is your current shopping list: " + shoppingList)
+
+	// shoppingList.indexOf()
+	
 }
+
+
+
+	// for (var i=shoppingList.length-1; i>0; i--){
+	// console.log(userReply);
+	// console.log(i);
+	// console.log(userReply[1]);
+
+	// 	if(shoppingList[i] === userReply[1]) {
+	// 		shoppingList.splice(i,1);
+	// 	}
+	
+// 	console.log(shoppingList);
+// 	console.log("removeItem");
+// }
+

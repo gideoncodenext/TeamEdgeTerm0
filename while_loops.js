@@ -51,8 +51,13 @@ let items = ["pencil" , "eraser" , "mirror" , "comb" , "spoon" , "key" , "earrin
 
 //-->TODO: Use a while loop to search the contents of an array for the key! If it exists, print "found the key!"
 
+let i= 0
 
+while("key" != items[i]){
+  i++
+}
 
+console.log("Found the key" + i);
 
 
 console.log("------------------- CHALLENGE 3 : BUGGIN   -------------------")
@@ -64,10 +69,13 @@ console.log("------------------- CHALLENGE 3 : BUGGIN   -------------------")
 
 function evenNumbersToFifty(){
 
-    let num = 50
-    while(num <50){
+    let num = 2
+    while(num <= 50){
+      console.log("number: " + num)
 
-        console.log("number: " + num)
+      num = num + 2
+
+        
 
     }
 }
@@ -98,16 +106,22 @@ function pattern(){
       
         array.push(index)
     
-       // console.log(array)
+        console.log(array)
         index++
     }
+    while(array.length > 1 ){
+      array.pop()
+      console.log(array)
 
+    }
 }
 pattern()
 
 
 console.log("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
 
+let randomNum = Math.floor(Math.random() * 101);
+let randomNum2 = Math.floor(Math.random() * 101);
 
 
 //-->TODO: Make a Math Quiz that asks two random numbers (between 0 and 100 to make it easy).

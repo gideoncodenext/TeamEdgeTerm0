@@ -29,7 +29,9 @@ for(let i = 0 ; i <=10 ; i++) {
 
 //-->TODO: Write a loop that prints a happy birthday message for every year you have been alive.
 
-
+for(let i = 1; i <= 15 ; i++) {
+    console.log("Happy bday " + i)
+}
 
 console.log("------------------- CHALLENGE 2 : ITERATOR ----------------------")
 
@@ -43,15 +45,18 @@ for(let i = 0 ; i< colors.length; i ++) {
 }
 
 //-->TODO: Declare an array with at least 10 animals. You provide the animals.
-let animals = []
+let animals = ["elephant", "dog", "monkey", "giraffe", "tiger", "lion", "lemur", "cheetah", "polar bear", "penguin"]
 
 //-->TODO: Log all the animals in the array with a for loop. 
 
+for(let i = 0 ; i<animals.length; i ++) {
+    console.log("The animal is: " + animals[i])
+}
 
 console.log("------------------- CHALLENGE 3 : DEBUG -------------------------")
 
 //-->TODO: fix this code so it no longer logs the last item as undefined...
-for(let i = 0 ; i<= colors.length; i ++) {
+for(let i = 0 ; i< colors.length; i ++) {
 
     console.log("The color is: " + colors[i])
 }
@@ -59,22 +64,25 @@ for(let i = 0 ; i<= colors.length; i ++) {
 //-->TODO: fix this code! What could be wrong? It should print out the 5 times tables all the way to 12.
 
 console.log("Behold...the 5 times table: ")
-for(let i = 0 ; i > 12;  i++) {
+for(let i = 0 ; i < 12;  i++) {
 
-    console.log(` 5 x ${i} =  ` + i*5 )
+    console.log(` 5 x ${i} =  ` + i*5 );
      
 }
 
 //-->TODO: This function takes in an array, but needs to log the items inside. What's missing?
 
+let array = ["Hi", "Hello", "Hey"]
+
 function logArray(array){
 
     for(let i = 0 ; i<array.length ; i++){
 
-        console.log(i)
+        console.log(array[i])
     }
 }
 
+logArray(array);
  
 
 console.log("------------------- CHALLENGE 4 : EVEN COUNTDOWN ------------------")
@@ -93,12 +101,25 @@ if(random % 2 == 0){
 }
 
 //-->TODO: Write a function that counts BACKWARDS from 100 and logs only odd numbers
+for(let i = 100 ; i > 0; i--) {
+    if(i % 2 != 0){
+        console.log(i + " is odd!")
 
+    } 
+    
+
+}
 
 //-->TODO: Write a function that counts BACKWARDS from the given random number and logs only even numbers
 
 
 console.log("------------------- CHALLENGE 5 : Finder ------------------")
+
+let randomNum = Math.floor(Math.random() * 101) + 1
+
+console.log(randomNum)
+
+
 
 //This code uses .includes() to see if an element exists in an array. It only has to appear once.
 let color = READLINE.question('Type a one word color and see if it is one of my favorite colors! >> ')
