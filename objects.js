@@ -47,10 +47,31 @@ console.log(object)
 
 //*********************************  MY OBJECT *************************** */
 
+let computer = {
+	screen: "display",
+	brand: "Mac",
+	model: "Catalina",
+	isNew: true,
+	yearMade: 2019,
+	input: ["mouse", "keyboard"],
+
+	saveData(){
+		console.log("Your data was saved");
+	},
+
+	newToOld() {
+		this.isNew = false
+
+	},
+
+	addInput(i) {
+		this.input.push(i);
+
+	}
+}
 
 
-
-
+console.log(computer.brand);
 
 //************************************************************************* */
 
@@ -63,7 +84,8 @@ console.log("------------------- CHALLENGE 2 : MODIFY   -------------------")
 
 //-->TODO: Update the object you just created  by adding new properties and values, including array elements, in this section.
 
-
+computer.input.push("display");
+console.log(computer.input);
 //-->TODO: Log your object again and observe changes
 
 
@@ -73,6 +95,18 @@ console.log("------------------- CHALLENGE 3 : METHOD   -------------------")
 //          Make your methods update your variables, or add a random number to an array, etc.
 
 
+computer.saveData()
+computer.addInput("Touch screen")
+console.log(computer.input);
+
+
 console.log("------------------- CHALLENGE 4 : LITERALLY   -------------------")
 
 //-->TODO: Put it all together using a string literal to tell the story of your object!
+
+console.log(`I have a computer that is a ${computer.brand}. It's model is ${computer.model}.`)
+
+
+
+
+

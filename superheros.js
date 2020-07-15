@@ -19,7 +19,7 @@
 
 console.log("-------------------  SUPERHERO !!  -------------------")
 
-const DELAY = 3000
+const DELAY = 300
 const DAMAGE_LIMIT = 5
 const MAJOR_BLOW = DAMAGE_LIMIT -2
 const LIVES_TOP_RANGE = 60
@@ -27,7 +27,7 @@ const LIVES_BOTTOM_RANGE = 40
 let rounds = 1
 let gameIsOn = true
 
-//COMMENT 1: 
+//COMMENT 1: This section makes a class called Superhero. In the class there is a function called constructor which contains parameters, variables and empy arrays.
 class Superhero {
 
     constructor(name, isAlive, friends, hitPoints, isGood , attackPower) {
@@ -40,7 +40,8 @@ class Superhero {
        
      } attack(enemy){
         
-        //COMMENT 2 ....
+        //COMMENT 2 The if statement checks if the superhero is alive and the enemy is alive. If they are both alive, it sets the damage equal to a random number and then it subtracts the random number of damage from the enemy health.
+        // The next if statement checks if the damage is greater than or equal to major blow and if so, it prints the message major blow.
         if(this.isAlive && enemy.isAlive){  
           
             console.log("  \n   ")
@@ -53,13 +54,13 @@ class Superhero {
                  
             }
 
-             //COMMENT 3....  
+             //COMMENT 3....  The superhero taunts villian and then does damage 
             console.log(`${this.name} 💬 : ${this.taunts[randomInteger(0,this.taunts.length-1)]} \n`)
             console.log(`${this.name}  💥X ${damage} ${enemy.name}  ${enemy.lives} : ${enemy.lives.length} \n`)
 
             if(enemy.lives.length <= 0){
                
-                //COMMENT 4....
+                //COMMENT 4 If the hero or enemy dies it will print that they have been slain and the game is over
                 enemy.isAlive=false
                 gameIsOn =false
                 console.log(`💀💀💀💀💀💀 ${enemy.name} has been slain!!! 💀💀💀💀💀 `)
@@ -81,7 +82,7 @@ class Superhero {
      }
 
      fillHealth(){
-          //COMMENT 5....
+          //COMMENT Filling health bar
           let amt = randomInteger(LIVES_BOTTOM_RANGE, LIVES_TOP_RANGE)
            
             for(let i = 0; i <= amt ; i++){
@@ -92,7 +93,7 @@ class Superhero {
     }
  }
 
-//COMMENT 6....
+//COMMENT 6 Creating objects for joker and batman.
 let batman = new Superhero()
 batman.name="Batman 🦸‍♂️"
 batman.isAlive = true 
@@ -116,7 +117,7 @@ console.log(`${batman.name} 💬 ${batman.taunts[1]}  \n `)
 console.log(`${joker.name} 💬 ${joker.taunts[1]}  \n `)
 
 
-//COMMENT 7....
+//COMMENT 7 Fighting for a round. 
 function fight(a, b){
     console.log(" ------------- ROUND -------------> " + rounds)
     
@@ -134,7 +135,7 @@ function randomInteger(min, max) {
   }
 
 
-  //COMMENT 8....
+  //COMMENT 8 Cause the heros to repeatedly fight 
   let timer = setInterval(function() {
 
     if(gameIsOn){

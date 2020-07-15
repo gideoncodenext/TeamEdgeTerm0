@@ -123,6 +123,8 @@ console.log("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
 let randomNum = Math.floor(Math.random() * 101);
 let randomNum2 = Math.floor(Math.random() * 101);
 
+console.log()
+
 
 //-->TODO: Make a Math Quiz that asks two random numbers (between 0 and 100 to make it easy).
 //         The user enters the answer. If wrong, keep prompting. If correct, say congrats!!

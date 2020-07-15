@@ -117,7 +117,7 @@ console.log("------------------- CHALLENGE 5 : Finder ------------------")
 
 let randomNum = Math.floor(Math.random() * 101) + 1
 
-console.log(randomNum)
+for(let i = randomNum; i >   )
 
 
 
