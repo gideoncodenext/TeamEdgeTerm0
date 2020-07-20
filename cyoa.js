@@ -78,7 +78,7 @@ function checkAnswer(input){
 
         } else if (inputMsg.includes("yes") && location == "phone"){
         	console.log("You play the message.")
-        	console.log("You here a panicked voice: There is no escape. They are watching you. All of your actions are not within your control. There is no true escape.")
+        	console.log("You here a panicked voice: They are watching you. All of your actions are not within your control. There is no true escape.")
         	console.log("GAME OVER")
         	gameIsOn = false 
        		console.log("Thank you for playing, goodbye.")
