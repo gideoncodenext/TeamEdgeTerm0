@@ -111,6 +111,8 @@ joker.cries = ["Aaaa!" , "Goh!" , "Hmph!" ,"You will pay for this"]
 joker.fillHealth()
 
 
+
+
 console.log(`${joker.name} :  ${joker.lives} - ${joker.lives.length}`)
 console.log(`${batman.name} : ${batman.lives} -  ${batman.lives.length} `)
 console.log(`${batman.name} 💬 ${batman.taunts[1]}  \n `)
